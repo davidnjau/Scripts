@@ -45,11 +45,8 @@ else
     # Create the commit with the provided message
     git commit -m "$commit_message"
 
-    # Check for merge conflicts
-    if git pull --no-commit &> /dev/null; then
-        echo "Merge conflicts detected. Please resolve the conflicts before pushing."
-        exit 1
-    fi
+    # Push
+    git pull 
 
     # Push the commits to the remote repository
     git push
