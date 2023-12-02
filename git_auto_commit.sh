@@ -14,7 +14,7 @@ content="$timestamp - $random_text"
 echo "$content" >> "$file_path"
 
 # Display a message
-echo "Random text added to $file_path:"
+echo "feat(core): Added the following script to $file_path:"
 echo "$content"
 
 # Change to your Git repository directory
@@ -24,7 +24,7 @@ cd /root/Scripts
 git add .
 
 # Generate a random commit message
-commit_message="Random commit message: $(date +%s)"
+commit_message="feat(core): Added new scripts: $(date +%s)"
 git commit -m "$commit_message"
 
 # Pull changes from the remote repository
