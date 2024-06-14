@@ -58,12 +58,13 @@ git pull
 git push
 
 # Merge the current branch with the main branch
+current_branch=$(git branch --show-current)
 git checkout main
 git pull origin main
-git merge -
+git merge "$current_branch"
 
 # Push the merged changes to the remote repository
 git push origin main
 
-# Switch back to the original branch
-git checkout -
+# Switch back to the current branch
+git checkout "$current_branch"
