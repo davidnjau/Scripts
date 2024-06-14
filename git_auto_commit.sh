@@ -60,7 +60,7 @@ git push
 # Merge the current branch with the main branch
 git checkout main
 git pull origin main
-git merge -m "Merge current branch into main for latest updates"
+git merge -m "Merge current branch into main for latest updates. Merge"
 
 # Push the merged changes to the remote repository
 git push origin main
