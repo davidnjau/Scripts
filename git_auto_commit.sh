@@ -56,3 +56,14 @@ git pull
 
 # Push changes to the remote repository
 git push
+
+# Merge the current branch with the main branch
+git checkout main
+git pull origin main
+git merge -
+
+# Push the merged changes to the remote repository
+git push origin main
+
+# Switch back to the original branch
+git checkout -
