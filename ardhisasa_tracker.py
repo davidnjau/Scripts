@@ -5,14 +5,14 @@ from datetime import datetime
 import pywhatkit
 
 # Variables
-sheet_id = "1TFQLGGetMI7YKkn0ILWjsR3csed6ki6AD20FkGTawN4"
-sheet_gid = "911287520"
+sheet_id = ""
+sheet_gid = ""
 destination = "deployments_and_demos.csv"
 
 mode = "contact"
 
-phone_numer = '+254708793574'
-group_id = 'J3ALXNaD2aoCRpECQ2S1Ac'
+phone_numer = ''
+group_id = ''
 message = 'Write the message here'
 
 waiting_time_to_send = 10
