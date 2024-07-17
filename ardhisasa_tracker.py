@@ -5,22 +5,28 @@ from datetime import datetime
 import pywhatkit
 
 # Variables
-sheet_id = ""
-sheet_gid = ""
+sheet_id = "1TFQLGGetMI7YKkn0ILWjsR3csed6ki6AD20FkGTawN4"
+sheet_gid = "911287520"
 destination = "deployments_and_demos.csv"
 
-mode = "contact"
+mode = "group"
 
-phone_numer = ''
-group_id = ''
+phone_numer = '+254708793574'
+group_id = 'J3ALXNaD2aoCRpECQ2S1Ac'
 message = 'Write the message here'
 
 waiting_time_to_send = 10
 close_tab = True
 waiting_time_to_close = 2
 
-time_hour = 12
-time_minute = 21
+ # Calculate current time
+current_time = datetime.now()
+
+# Set time_hour to current hour
+time_hour = current_time.hour
+
+# Set time_minute to 10 minutes after the current minute
+time_minute = (current_time.minute + 5) % 60
 
 
 
@@ -61,15 +67,6 @@ def format_entries(entries):
 
 def main():
 
-    # Calculate current time
-    current_time = datetime.now()
-
-     # Set time_hour to current hour
-    time_hour = current_time.hour
-
-    # Set time_minute to 10 minutes after the current minute
-    time_minute = (current_time.minute + 5) % 60
-
     # Download the Google Sheet as a CSV file
     download_google_sheet_as_csv(sheet_id, sheet_gid, destination)
 
@@ -81,13 +78,14 @@ def main():
     message = formatted_entries
 
     print(message)
+    print(f"time_hour: {time_hour} \n time_minute:{time_minute} \n current_time:{current_time}")
 
     if mode == "contact":
         # Send a WhastApp message to an specific contact
-        pywhatkit.sendwhatmsg(phone_numer, message, time_hour, time_minute, waiting_time_to_send, close_tab, waiting_time_to_close)
+        pywhatkit.sendwhatmsg_instantly(phone_numer, message)
     elif mode == "group":
         # Send a WhastApp message to an specific group
-        pywhatkit.sendwhatmsg_to_group(group_id, message, time_hour, time_minute, waiting_time_to_send, close_tab, waiting_time_to_close)
+        pywhatkit.sendwhatmsg_to_group_instantly(group_id, message)
     else:
         print("Error code: 97654")
         print("Error Message: Please select a mode to send your message.")
