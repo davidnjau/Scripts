@@ -153,7 +153,7 @@ def get_message(time_period):
         return random.choice(sweet_random_texts)
 
 def main():
-    phone_number = "+254725571239"  # Replace with Omi's phone number
+    phone_number = "+"  # Replace with Omi's phone number
     time_period = get_time_period()
     message = get_message(time_period)
     send_message(phone_number, message)
